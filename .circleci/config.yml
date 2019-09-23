@@ -7,7 +7,9 @@ jobs:
     parallelism: 3
     working_directory: ~/ci
     docker:
-      - image: circleci/classic:201808-01
+      - image: buildpack-deps:xenial
+        environment:
+          ENV: CI
     environment:
       USE_CCACHE: 1
       ANDROID_JACK_VM_ARGS: "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx6G"
