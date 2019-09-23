@@ -5,3 +5,7 @@ figlet ANU
 screenfetch
 
 nproc
+
+ls -l
+
+df -h
