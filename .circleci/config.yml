@@ -34,3 +34,6 @@ jobs:
       - run:
           name: Clone
           command: ./clone.sh
+      - run:
+          name: Test
+          command: ./test.sh
