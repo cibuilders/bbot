@@ -12,7 +12,7 @@ jobs:
           ENV: CI
     environment:
       USE_CCACHE: 1
-      ANDROID_JACK_VM_ARGS: "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx6G"
+      ANDROID_JACK_VM_ARGS: "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
     resource_class: xlarge
     steps:
       - checkout
@@ -31,9 +31,6 @@ jobs:
       - run:
           name: Sync repo
           command: ./sync.sh
-      - run:
-          name: Clone
-          command: ./clone.sh
       - run:
           name: Clone
           command: ./clone.sh
