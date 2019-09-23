@@ -2,6 +2,6 @@
 
 figlet ANU
 
-neofetch
+screenfetch
 
 nproc
