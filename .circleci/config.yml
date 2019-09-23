@@ -1,0 +1,36 @@
+version: 2
+environment:
+  TZ: '/usr/share/zoneinfo/UTC'
+
+jobs:
+  build:
+    parallelism: 3
+    working_directory: ~/ci
+    docker:
+      - image: circleci/classic:201808-01
+    environment:
+      USE_CCACHE: 1
+      ANDROID_JACK_VM_ARGS: "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx6G"
+    resource_class: xlarge
+    steps:
+      - checkout
+
+      - run:
+          name: Install apt
+          working_directory: /
+          command: |
+            apt-get install -y git ccache sudo figlet
+      - run:
+          name: Bash
+          command: ./.circleci/setup.sh
+      - run:
+          name: Prepare
+          command: ./.circleci/prepare.sh
+      - run:
+          name: Create Dir
+          working_directory : /
+          command: |
+            mkdir aosp
+      - run:
+          name: Clone
+          command: ./clone.sh
