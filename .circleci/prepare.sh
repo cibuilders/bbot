@@ -13,11 +13,11 @@ sudo chmod a+x /usr/local/bin/repo
 # sudo ln -sf /usr/share/zoneinfo/EET /etc/localtime
 
 # swap
-sudo dd if=/dev/zero of=/swap count=6144 bs=1M
-sudo chmod 600 /swap
-sudo mkswap /swap
-sudo swapon /swap
-sudo sysctl -w vm.swappiness=80
+#sudo dd if=/dev/zero of=/swap count=6144 bs=1M
+#sudo chmod 600 /swap
+#sudo mkswap /swap
+#sudo swapon /swap
+#sudo sysctl -w vm.swappiness=80
 
 # git
 git config --global user.name "AnggaR96s"
