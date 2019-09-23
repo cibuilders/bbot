@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 clone() {
-mkdir aosp
 cd aosp
   git clone https://github.com/PixelExperience-Devices/device_xiaomi_kenzo.git -b pie device/xiaomi/kenzo
   git clone https://github.com/baalajimaestro/msm8956-common.git -b pie device/xiaomi/msm8956-common

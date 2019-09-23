@@ -29,13 +29,20 @@ jobs:
           name: Prepare
           command: ./.circleci/prepare.sh
       - run:
-          name: Create Dir
-          working_directory : /
-          command: |
-            mkdir aosp
+          name: Sync repo
+          command: ./sync.sh
       - run:
           name: Clone
           command: ./clone.sh
+      - run:
+          name: Clone
+          command: ./clone.sh
+      - run:
+          name: Make
+          command: ./make.sh
+      - run:
+          name: Upload
+          command: ./upload.sh
       - run:
           name: Test
           command: ./test.sh
