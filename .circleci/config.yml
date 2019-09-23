@@ -13,7 +13,7 @@ jobs:
     environment:
       USE_CCACHE: 1
       ANDROID_JACK_VM_ARGS: "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
-    resource_class: xlarge
+    resource_class: large
     steps:
       - checkout
 
