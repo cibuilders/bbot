@@ -4,7 +4,6 @@ environment:
 
 jobs:
   build:
-    parallelism: 3
     working_directory: ~/ci
     docker:
       - image: buildpack-deps:xenial
